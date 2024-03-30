@@ -1,0 +1,26 @@
+-- 코드를 입력하세요
+-- SELECT
+--     *
+-- FROM REST_INFO
+SELECT
+    ri.REST_ID,
+    ri.REST_NAME,
+    ri.FOOD_TYPE,
+    ri.FAVORITES,
+    ri.ADDRESS,
+    ROUND(AVG(rr.REVIEW_SCORE), 2) SCORE
+FROM
+    REST_INFO ri
+LEFT JOIN REST_REVIEW rr
+       ON ri.REST_ID = rr.REST_ID
+WHERE
+    ri.ADDRESS LIKE '서울%'
+AND 
+    rr.REVIEW_SCORE IS NOT NULL
+GROUP BY
+    ri.REST_ID,
+    ri.REST_NAME,
+    ri.FOOD_TYPE,
+    ri.FAVORITES,
+    ri.ADDRESS
+ORDER BY SCORE DESC, FAVORITES DESC

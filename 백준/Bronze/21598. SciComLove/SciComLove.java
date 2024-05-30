@@ -6,9 +6,11 @@ public class Main {
 
         int a = scanner.nextInt();
 
-        for (int i = 0; i < a; i++) {
-            System.out.print("SciComLove");
+        if (a == 1 || a == 2) {
+            for (int i = 0; i < a; i++) {
+                System.out.println("SciComLove");
+            }
         }
-        
+
     }
 }

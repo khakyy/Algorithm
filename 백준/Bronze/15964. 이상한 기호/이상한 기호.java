@@ -4,9 +4,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        int a = scanner.nextInt();
-        int b = scanner.nextInt();
-
+        long a = scanner.nextLong();
+        long b = scanner.nextLong();
+        
         System.out.println((a + b) * (a - b));
+        
     }
 }
